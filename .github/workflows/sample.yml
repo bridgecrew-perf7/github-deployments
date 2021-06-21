@@ -1,0 +1,18 @@
+name: Sample Workflow
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    name: Show Workflow Start Date
+    steps:
+      - uses: actions/checkout@v2
+      - name: Output Current Date
+        run: |
+          echo "Current date: $(date)"
